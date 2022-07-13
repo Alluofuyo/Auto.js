@@ -3,9 +3,18 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        release {
+            keyAlias 'mysigned'
+            keyPassword '123123'
+            storeFile '../mysigned.jks'
+            storePassword '123123'
+        }
+    }
+    
     compileSdkVersion versions.compile
     buildToolsVersion versions.buildTool
-
+    
     defaultConfig {
         applicationId "com.stardust.auojs.inrt"
         minSdkVersion versions.mini
@@ -53,6 +62,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
