@@ -14,6 +14,14 @@ configurations.all {
 }
 
 android {
+    signingConfigs {
+        release {
+            keyAlias 'mysigned'
+            keyPassword '123123'
+            storeFile '../mysigned.jks'
+            storePassword '123123'
+        }
+    }
     compileSdkVersion versions.compile
     buildToolsVersion versions.buildTool
     defaultConfig {
