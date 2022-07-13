@@ -18,7 +18,7 @@ android {
         release {
             keyAlias 'mysigned'
             keyPassword '123123'
-            storeFile '../mysigned.jks'
+            storeFile '/home/runner/work/Auto.js/Auto.js/app/mysigned.jks'
             storePassword '123123'
         }
     }
